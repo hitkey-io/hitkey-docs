@@ -109,6 +109,7 @@ Mensajes de error comunes:
 | `INVITE_NOT_FOUND` | 404 | Invitación no encontrada |
 | `INVITE_EXPIRED` | 400 | La invitación ha expirado |
 | `EMAIL_MISMATCH` | 400 | El email del usuario no coincide con el de la invitación |
+| `ADMIN_CANNOT_EDIT_ADMIN` | 403 | El admin no puede editar los permisos de otro admin |
 
 ## Códigos de Estado HTTP
 

@@ -22,10 +22,24 @@ Un proyecto es un contenedor para:
 | Rol | Gestionar miembros | Gestionar configuración | Gestionar clientes | Eliminar proyecto |
 |-----|--------------------|-----------------------|--------------------|-------------------|
 | **Owner** | Sí | Sí | Sí | Sí |
-| **Admin** | Sí | Sí | Sí | No |
+| **Admin** | Limitado | Sí | Sí | No |
 | **Member** | No | No | No | No |
 
 Cada proyecto tiene exactamente un **owner**. La propiedad puede transferirse a otro miembro.
+
+### Reglas de edición de miembros
+
+| Actor \ Objetivo | Owner | Admin | Member | Uno mismo |
+|---|---|---|---|---|
+| **Owner** | — | rol + permisos | rol + permisos | solo permisos |
+| **Admin** | ✗ | ✗ | solo permisos | solo permisos |
+| **Member** | ✗ | ✗ | ✗ | ✗ |
+
+::: warning
+- Nadie puede cambiar el rol del owner
+- Los usuarios no pueden cambiar su propio rol
+- Los admins solo pueden editar permisos de miembros regulares y de sí mismos
+:::
 
 ## Crear un Proyecto
 

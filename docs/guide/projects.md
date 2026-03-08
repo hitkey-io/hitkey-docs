@@ -22,10 +22,24 @@ A project is a container for:
 | Role | Manage members | Manage settings | Manage clients | Delete project |
 |------|---------------|-----------------|----------------|----------------|
 | **Owner** | Yes | Yes | Yes | Yes |
-| **Admin** | Yes | Yes | Yes | No |
+| **Admin** | Limited | Yes | Yes | No |
 | **Member** | No | No | No | No |
 
 Each project has exactly one **owner**. Ownership can be transferred to another member.
+
+### Member Editing Rules
+
+| Actor \ Target | Owner | Admin | Member | Self |
+|---|---|---|---|---|
+| **Owner** | — | role + permissions | role + permissions | permissions only |
+| **Admin** | ✗ | ✗ | permissions only | permissions only |
+| **Member** | ✗ | ✗ | ✗ | ✗ |
+
+::: warning
+- Nobody can change the owner's role
+- Users cannot change their own role
+- Admins can only edit permissions of regular members and themselves
+:::
 
 ## Create a Project
 

@@ -204,6 +204,21 @@ PATCH /projects/:slug/members/:memberId
 Los permisos usan claves de tipo string (p. ej., `"can_deploy"`, `"editor"`), no UUIDs.
 :::
 
+::: warning Control de acceso
+- **Owner** puede cambiar el rol y los permisos de cualquier miembro (solo permisos para sí mismo)
+- **Admin** solo puede editar permisos de miembros regulares y de sí mismo
+- Nadie puede cambiar su propio rol ni el rol del owner
+:::
+
+**Respuestas de error:**
+
+| HTTP | Error | Descripción |
+|------|-------|-------------|
+| 403 | `ADMIN_CANNOT_EDIT_ADMIN` | El admin no puede editar los permisos de otro admin |
+| 403 | Cannot change your own role | Los usuarios no pueden cambiar su propio rol |
+| 400 | Cannot change owner role | El rol del owner no puede ser cambiado |
+| 403 | Only owner can assign admin role | Solo el owner puede promover miembros a admin |
+
 ---
 
 ## Eliminar Miembro

@@ -109,6 +109,7 @@ Common error messages:
 | `INVITE_NOT_FOUND` | 404 | Invite not found |
 | `INVITE_EXPIRED` | 400 | Invite has expired |
 | `EMAIL_MISMATCH` | 400 | User's email doesn't match invite email |
+| `ADMIN_CANNOT_EDIT_ADMIN` | 403 | Admin cannot edit other admin's permissions |
 
 ## HTTP Status Codes
 

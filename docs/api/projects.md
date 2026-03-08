@@ -204,6 +204,21 @@ PATCH /projects/:slug/members/:memberId
 Permissions use string keys (e.g., `"can_deploy"`, `"editor"`), not UUIDs.
 :::
 
+::: warning Access Control
+- **Owner** can change role and permissions for any member (permissions only for self)
+- **Admin** can only edit permissions of regular members and themselves
+- Nobody can change their own role or the owner's role
+:::
+
+**Error responses:**
+
+| HTTP | Error | Description |
+|------|-------|-------------|
+| 403 | `ADMIN_CANNOT_EDIT_ADMIN` | Admin cannot edit another admin's permissions |
+| 403 | Cannot change your own role | Users cannot change their own role |
+| 400 | Cannot change owner role | Owner's role cannot be changed |
+| 403 | Only owner can assign admin role | Only the owner can promote members to admin |
+
 ---
 
 ## Remove Member
