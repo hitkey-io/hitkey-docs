@@ -62,7 +62,7 @@ export const kz: LocaleSpecificConfig<DefaultTheme.Config> = {
     },
 
     editLink: {
-      pattern: 'https://github.com/hitkeygroup/hitkey-docs/edit/main/docs/:path',
+      pattern: 'https://github.com/hitkey-io/hitkey-docs/edit/master/docs/:path',
       text: 'GitHub-та өңдеу',
     },
 

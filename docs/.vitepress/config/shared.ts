@@ -13,7 +13,7 @@ export const shared: UserConfig = {
     logo: '/logo.svg',
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/hitkeygroup' },
+      { icon: 'github', link: 'https://github.com/hitkey-io' },
     ],
 
     search: {
